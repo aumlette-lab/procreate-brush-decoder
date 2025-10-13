@@ -1,0 +1,70 @@
+[
+  {
+    "panel": "Stroke Path",
+    "setting": "Spacing",
+    "paths": ["$top.root.plotSpacing"],
+    "data_type": "float",
+    "gui_values": { "min": 0, "max": 100, "unit": "%" },
+    "raw_range": "0-2.0",
+    "formula": "round(72.943 * (raw ^ 0.4558))",
+    "notes": null
+  },
+  {
+    "panel": "Stroke Path",
+    "setting": "Spacing Jitter",
+    "paths": ["$top.root.plotSpacingJitter"],
+    "data_type": "float",
+    "gui_values": { "min": 0, "max": 100, "unit": "%" },
+    "raw_range": "0-10",
+    "formula": "round(raw*10)",
+    "notes": null
+  },
+  {
+    "panel": "Stroke Path",
+    "setting": "Jitter Lateral",
+    "paths": ["$top.root.plotJitter"],
+    "data_type": "float",
+    "gui_values": { "min": 0, "max": 200, "unit": "%" },
+    "raw_range": "0-13.7844",
+    "formula": "round(60.6919 * (raw ^ 0.4545))",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Input Style",
+    "paths": ["$top.root.shapeAzimuth", "$top.root.shapeRoll"],
+    "data_type": "enum",
+    "gui_values": ["Touch Only", "Azimuth", "Azimuth and Rolling"],
+    "raw_range": null,
+    "formula": {
+      "Touch Only": [false, false],
+      "Azimuth": [true, false],
+      "Azimuth and Rolling": [true, true]
+    },
+    "notes": "Derived from shapeAzimuth and shapeRoll boolean flags."
+  },
+  {
+    "panel": "Rendering",
+    "setting": "Rendering Mode",
+    "paths": [
+      "$top.root.renderingModeEnhanced","$top.root.renderingModeLightGlaze","$top.root.renderingModeWet"
+    ],
+    "data_type": "enum",
+    "gui_values": [
+      "Light Glaze",
+      "Glaze",
+      "Wet",
+      "Dry",
+      "Wet & Glaze"
+    ],
+    "raw_range": null,
+    "formula": {
+      "Light Glaze": [null, true, false],
+      "Glaze": [null, false, false],
+      "Wet": [null, false, true],
+      "Wet & Glaze": [true, true, true],
+      "Dry": [false, false, false]
+    },
+    "notes": "Pattern based on rendering mode toggles."
+  }
+]

@@ -106,7 +106,7 @@ function isUidWrapper(value: unknown): value is { UID: number } {
   return keys.length === 1 && typeof (value as { UID: unknown }).UID === "number";
 }
 
-function isKeyedArchive(value: unknown): value is KeyedArchive {
+export function isKeyedArchive(value: unknown): value is KeyedArchive {
   return (
     isPlainObject(value) &&
     Array.isArray((value as KeyedArchive).$objects) &&
@@ -114,7 +114,7 @@ function isKeyedArchive(value: unknown): value is KeyedArchive {
   );
 }
 
-function resolveArchiveTop(archive: KeyedArchive): Record<string, unknown> {
+export function resolveArchiveTop(archive: KeyedArchive): Record<string, unknown> {
   const objects = Array.isArray(archive.$objects) ? archive.$objects : [];
   const cache = new Map<number, unknown>();
 

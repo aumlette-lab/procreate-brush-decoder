@@ -4,8 +4,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Plist / Archive Viewer",
-  description: "Upload .plist or .archive files, view, sort, and export to CSV/XLSX"
+  title: "Procreate Brush Decoder",
+  description: "Decode Procreate brush plist/archive files into human-readable settings"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
