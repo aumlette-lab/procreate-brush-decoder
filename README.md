@@ -1,10 +1,10 @@
-# 🖌️ Procreate Brush Decoder
+# Procreate Brush Decoder
 
 A model‑driven web viewer for decoding **Procreate brush settings** directly from `.brush` / `.brushset` / `.plist` files.
 Built on top of the **Plist Viewer** project, it uses a structured schema (`procreate-brush-decoder-vX.json`) to translate Procreate's raw brush data into human‑readable GUI values.
 
 
-## ✨ Features
+## Features
 
 * **Schema‑Driven Rendering** — Displays brush panels and settings from a JSON definition (not raw plist keys).
 * **Human‑Readable Output** — Decodes numerical and boolean values into GUI‑equivalent sliders, toggles, or modes.
@@ -13,7 +13,7 @@ Built on top of the **Plist Viewer** project, it uses a structured schema (`proc
 * **Safe Formula Evaluation** — Custom sandbox for evaluating math expressions.
 * **Extensible Schema** — Supports formulas, multi‑path composites, and logical mappings.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repo
 
@@ -42,7 +42,7 @@ Then open [http://localhost:3000](http://localhost:3000).
 * The viewer will decode and display its settings.
 
 
-## 🧰 Tech Stack
+## Tech Stack
 
 * **Next.js 14** + **TypeScript**
 * **Tailwind CSS**
@@ -50,7 +50,7 @@ Then open [http://localhost:3000](http://localhost:3000).
 * **Custom formula evaluator** for safe math and logic execution
 
 
-## 📄 License
+## License
 
 MIT License — feel free to fork, extend, and adapt.
 
