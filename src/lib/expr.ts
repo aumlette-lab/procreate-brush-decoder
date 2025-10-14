@@ -5,6 +5,7 @@ const FN_MAP = {
   ceil: Math.ceil,
   abs: Math.abs,
   sqrt: Math.sqrt,
+  SQRT: Math.sqrt,
   clamp: (x: number, a: number, b: number) => Math.min(Math.max(x, a), b),
   PI: () => Math.PI,
   pi: () => Math.PI,

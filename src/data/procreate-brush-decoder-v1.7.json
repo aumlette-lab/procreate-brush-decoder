@@ -1836,6 +1836,6 @@
       "Divide": [26, 26],
       "Linear Height": [28, 28]
     },
-    "notes": "if the value are not [0, 0], we can be sure that this is part of the dual brush but if it is [0, 0] then it might be or might not be"
+    "notes": null
   }
 ]
