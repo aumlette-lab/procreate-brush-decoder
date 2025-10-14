@@ -71,7 +71,7 @@ export default function Page() {
 
   return (
     <main className="min-h-screen bg-slate-100 py-10 dark:bg-slate-950">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-8 md:px-14 lg:px-20">
         <header className="space-y-2">
           <h1 className="text-3xl font-semibold text-slate-900 dark:text-slate-100">Procreate Brush Decoder</h1>
           <p className="max-w-2xl text-sm text-slate-600 dark:text-slate-300">

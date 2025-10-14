@@ -16,7 +16,12 @@ export function PanelView({ panel, settings, showRaw }: PanelViewProps) {
         <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">{panel}</h2>
       </header>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+        <table className="min-w-full table-fixed divide-y divide-slate-200 dark:divide-slate-700">
+          <colgroup>
+            <col className="w-1/2" />
+            {showRaw ? <col className="w-1/4" /> : null}
+            <col className={showRaw ? "w-1/4" : "w-1/2"} />
+          </colgroup>
           <thead className="bg-slate-50 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:bg-slate-800 dark:text-slate-300">
             <tr>
               <th className="py-3 pl-6 pr-4">Setting</th>

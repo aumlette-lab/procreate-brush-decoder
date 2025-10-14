@@ -6,6 +6,8 @@ const FN_MAP = {
   abs: Math.abs,
   sqrt: Math.sqrt,
   clamp: (x: number, a: number, b: number) => Math.min(Math.max(x, a), b),
+  PI: () => Math.PI,
+  pi: () => Math.PI,
 } as const;
 
 type FnMap = typeof FN_MAP;

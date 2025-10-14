@@ -2,9 +2,11 @@
   {
     "panel": "Stroke Path",
     "setting": "Spacing",
-    "paths": ["$top.root.plotSpacing"],
+    "paths": [
+      "$top.root.plotSpacing"
+    ],
     "data_type": "float",
-    "gui_values": { "min": 0, "max": 100, "unit": "%" },
+    "gui_values": "0-100%",
     "raw_range": "0-2.0",
     "formula": "round(72.943 * (raw ^ 0.4558))",
     "notes": null
@@ -12,9 +14,11 @@
   {
     "panel": "Stroke Path",
     "setting": "Spacing Jitter",
-    "paths": ["$top.root.plotSpacingJitter"],
+    "paths": [
+      "$top.root.plotSpacingJitter"
+    ],
     "data_type": "float",
-    "gui_values": { "min": 0, "max": 100, "unit": "%" },
+    "gui_values": "0-100%",
     "raw_range": "0-10",
     "formula": "round(raw*10)",
     "notes": null
@@ -22,49 +26,1816 @@
   {
     "panel": "Stroke Path",
     "setting": "Jitter Lateral",
-    "paths": ["$top.root.plotJitter"],
+    "paths": [
+      "$top.root.plotJitter"
+    ],
     "data_type": "float",
-    "gui_values": { "min": 0, "max": 200, "unit": "%" },
+    "gui_values": "0-200%",
     "raw_range": "0-13.7844",
     "formula": "round(60.6919 * (raw ^ 0.4545))",
     "notes": null
   },
   {
+    "panel": "Stroke Path",
+    "setting": "Jitter Linear",
+    "paths": [
+      "$top.root.plotJitterLongitudinal"
+    ],
+    "data_type": "float",
+    "gui_values": "0-200%",
+    "raw_range": "0-13.7844",
+    "formula": "round(60.6919 * (raw ^ 0.4545))",
+    "notes": null
+  },
+  {
+    "panel": "Stroke Path",
+    "setting": "Fall Off",
+    "paths": [
+      "$top.root.dynamicsFalloff"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Stabilization",
+    "setting": "StreamLine Amount",
+    "paths": [
+      "$top.root.plotSmoothing"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Stabilization",
+    "setting": "StreamLine Pressure",
+    "paths": [
+      "$top.root.dynamicsPressureSmoothing"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Stabilization",
+    "setting": "Stabilization Amount",
+    "paths": [
+      "$top.root.plotMovingAverageStabilization"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Stabilization",
+    "setting": "Motion Filtering Amount",
+    "paths": [
+      "$top.root.plotFFTSmoothingAmount"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Stabilization",
+    "setting": "Motion Filtering Expression",
+    "paths": [
+      "$top.root.plotFFTSmoothingBias"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Taper",
+    "setting": "Start Length",
+    "paths": [
+      "$top.root.pencilTaperStartLength"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "Pressure taper start"
+  },
+  {
+    "panel": "Taper",
+    "setting": "End Length",
+    "paths": [
+      "$top.root.pencilTaperEndLength"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "Pressure taper end"
+  },
+  {
+    "panel": "Taper",
+    "setting": "Pressure Taper Link tip sizes",
+    "paths": [
+      "$top.root.pencilTaperSizeLinked"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Taper",
+    "setting": "Pressure Taper Size",
+    "paths": [
+      "$top.root.pencilTaperSize"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Taper",
+    "setting": "Pressure Taper Opacity",
+    "paths": [
+      "$top.root.pencilTaperOpacity"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Taper",
+    "setting": "Pressure Taper Pressure",
+    "paths": [
+      "$top.root.taperPressure"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Taper",
+    "setting": "Pressure Taper Tip",
+    "paths": [
+      "$top.root.pencilTaperShape"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "0% = Sharp, 100% = Blunt"
+  },
+  {
+    "panel": "Taper",
+    "setting": "Pressure Taper Tip Animation",
+    "paths": [
+      "$top.root.pencilTipAnimation"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Taper",
+    "setting": "Touch Start Length",
+    "paths": [
+      "$top.root.taperStartLength"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "Touch taper start"
+  },
+  {
+    "panel": "Taper",
+    "setting": "Touch End Length",
+    "paths": [
+      "$top.root.taperEndLength"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "Touch taper end"
+  },
+  {
+    "panel": "Taper",
+    "setting": "Touch Taper Link tip sizes",
+    "paths": [
+      "$top.root.taperSizeLinked"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Taper",
+    "setting": "Touch Taper Size",
+    "paths": [
+      "$top.root.taperSize"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Taper",
+    "setting": "Touch Taper Opacity",
+    "paths": [
+      "$top.root.taperOpacity"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Taper",
+    "setting": "Touch Taper Tip",
+    "paths": [
+      "$top.root.taperShape"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "0% = Sharp, 100% = Blunt"
+  },
+  {
+    "panel": "Taper",
+    "setting": "Classic Taper",
+    "paths": [
+      "$top.root.taperVersion"
+    ],
+    "data_type": "int",
+    "gui_values": "on/off",
+    "raw_range": "0/1",
+    "formula": "0 = classic taper on, 1 = classic taper off",
+    "notes": "0 = classic taper on, 1 = classic taper off"
+  },
+  {
+    "panel": "Shape",
+    "setting": "Shape Source",
+    "paths": [
+      "$top.root.bundledShapePath"
+    ],
+    "data_type": "str",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": null,
+    "notes": "path of the shape file"
+  },
+  {
     "panel": "Shape",
     "setting": "Input Style",
-    "paths": ["$top.root.shapeAzimuth", "$top.root.shapeRoll"],
-    "data_type": "enum",
-    "gui_values": ["Touch Only", "Azimuth", "Azimuth and Rolling"],
+    "paths": [
+      "$top.root.shapeAzimuth",
+      "$top.root.shapeRoll"
+    ],
+    "data_type": "bool",
+    "gui_values": [
+      "Touch Only",
+      "Azimuth",
+      "Azimuth and Rolling"
+    ],
     "raw_range": null,
     "formula": {
-      "Touch Only": [false, false],
-      "Azimuth": [true, false],
-      "Azimuth and Rolling": [true, true]
+      "Touch only": [
+        false,
+        false
+      ],
+      "Azimuth": [
+        true,
+        false
+      ],
+      "Azimuth+Roll": [
+        true,
+        true
+      ]
     },
-    "notes": "Derived from shapeAzimuth and shapeRoll boolean flags."
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Relative to Stroke",
+    "paths": [
+      "$top.root.shapeRollMode"
+    ],
+    "data_type": "int",
+    "gui_values": "on/off",
+    "raw_range": "0/1",
+    "formula": "0 = Off, 1 = On",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Rotation",
+    "paths": [
+      "$top.root.shapeRotation"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": "Controls stamp rotation offset"
+  },
+  {
+    "panel": "Shape",
+    "setting": "Scatter",
+    "paths": [
+      "$top.root.shapeScatter"
+    ],
+    "data_type": "float",
+    "gui_values": "0-200%",
+    "raw_range": "0-2",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Count",
+    "paths": [
+      "$top.root.shapeCount"
+    ],
+    "data_type": "float",
+    "gui_values": "1-16",
+    "raw_range": "0-1",
+    "formula": "round(raw * 16)",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Count Jitter",
+    "paths": [
+      "$top.root.shapeCountJitter"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Randomized",
+    "paths": [
+      "$top.root.shapeRandomise"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Flip X",
+    "paths": [
+      "$top.root.shapeFlipXJitter"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Flip Y",
+    "paths": [
+      "$top.root.shapeFlipYJitter"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Roundness",
+    "paths": [
+      "$top.root.shapeRoundness"
+    ],
+    "data_type": "float",
+    "gui_values": "circle or ellipse",
+    "raw_range": "0-1",
+    "formula": "if Raw = 1 then no distortion (circle), else if 0 < Raw < 1 then increasing horizontal/vertical compression (ellipse)",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Angle",
+    "paths": [
+      "$top.root.shapeAngle"
+    ],
+    "data_type": "float",
+    "gui_values": "0-360",
+    "raw_range": null,
+    "formula": "round(raw * 180 / PI())",
+    "notes": "Degrees (0-360)"
+  },
+  {
+    "panel": "Shape",
+    "setting": "Pressure Roundness",
+    "paths": [
+      "$top.root.dynamicsPressureShapeRoundness",
+      "$top.root.dynamicsPressureShapeRoundnessMinimum"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": null,
+    "formula": "(raw[0] === 1 && raw[1] === 1) ? 0 : (raw[0] === 1 && raw[1] < 1) ? round((1 - raw[1]) * 100) : (raw[1] === 1 && raw[0] < 1) ? -round((1 - raw[0]) * 100) : 0",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Tilt Roundness",
+    "paths": [
+      "$top.root.dynamicsTiltShapeRoundness",
+      "$top.root.dynamicsTiltShapeRoundnessMinimum"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": null,
+    "formula": "(raw[0] === 1 && raw[1] === 1) ? 0 : (raw[0] === 1 && raw[1] < 1) ? round((1 - raw[1]) * 100) : (raw[1] === 1 && raw[0] < 1) ? -round((1 - raw[0]) * 100) : 0",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Roundness Vertical Jitter",
+    "paths": [
+      "$top.root.jitterShapeRoundness"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Roundness Horizontal Jitter",
+    "paths": [
+      "$top.root.jitterShapeRoundnessX"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Shape",
+    "setting": "Shape Filtering",
+    "paths": [
+      "$top.root.shapeFilter",
+      "$top.root.shapeFilterMode"
+    ],
+    "data_type": "composite",
+    "gui_values": [
+      "No filtering",
+      "Classic filtering",
+      "Improved filtering"
+    ],
+    "raw_range": null,
+     "formula": {
+      "No Filtering": [false, null],
+      "Classic Filtering": [true, 1],
+      "Improved Filtering": [true, 0]
+    },
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Grain Source",
+    "paths": [
+      "$top.root.bundledGrainPath"
+    ],
+    "data_type": "str",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": null,
+    "notes": "path of the grain file"
+  },
+  {
+    "panel": "Grain",
+    "setting": "Moving/Texturised",
+    "paths": [
+      "$top.root.textureApplication"
+    ],
+    "data_type": "int",
+    "gui_values": "Moving/Texturised",
+    "raw_range": "0/1",
+    "formula": "0 = Moving, 1 = Texturised",
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Movement",
+    "paths": [
+      "$top.root.textureMovement"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "0 = stamp, 100 = rolling"
+  },
+  {
+    "panel": "Grain",
+    "setting": "Scale",
+    "paths": [
+      "$top.root.textureScale"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-16",
+    "formula": "round(25 * SQRT(raw))",
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Zoom",
+    "paths": [
+      "$top.root.textureZoom"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "0 = follow size, 100 = cropped"
+  },
+  {
+    "panel": "Grain",
+    "setting": "Rotation",
+    "paths": [
+      "$top.root.textureRotation"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": "100 = follow stroke"
+  },
+  {
+    "panel": "Grain",
+    "setting": "Depth",
+    "paths": [
+      "$top.root.grainDepth"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Depth Minimum",
+    "paths": [
+      "$top.root.grainDepthMinimum"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Depth Jitter",
+    "paths": [
+      "$top.root.grainDepthJitter"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Offset Jitter",
+    "paths": [
+      "$top.root.textureOffsetJitter"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Blend Mode",
+    "paths": [
+      "$top.root.grainBlendMode",
+      "$top.root.grainBlendModeExtended"
+    ],
+    "data_type": "int",
+    "gui_values": [
+      "Multiply",
+      "Darken",
+      "Colour Burn",
+      "Linear Burn",
+      "Lighten",
+      "Colour Dodge",
+      "Overlay",
+      "Hard Mix",
+      "Difference",
+      "Subtract",
+      "Divide",
+      "Height",
+      "Linear Height"
+    ],
+    "raw_range": null,
+    "formula": {
+      "Multiply": [1, 1],
+      "Darken": [19, 34],
+      "Colour Burn": [10, 10],
+      "Linear Burn": [8, 8],
+      "Lighten": [4, 4],
+      "Colour Dodge": [9, 9],
+      "Overlay": [11, 11],
+      "Hard Mix": [20, 20],
+      "Difference": [6, 6],
+      "Subtract": [7, 7],
+      "Divide": [26, 26],
+      "Height": [27, 27],
+      "Linear Height": [28, 28]
+    },
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Brightness",
+    "paths": [
+      "$top.root.textureBrightness"
+    ],
+    "data_type": "float",
+    "gui_values": "-75-75%",
+    "raw_range": "-0.75-0.75",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Contrast",
+    "paths": [
+      "$top.root.textureContrast"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "Grain Filtering",
+    "paths": [
+      "$top.root.textureFilter",
+      "$top.root.textureFilterMode"
+    ],
+    "data_type": "composite",
+    "gui_values": [
+      "No filtering",
+      "Classic filtering",
+      "Improved filtering"
+    ],
+    "raw_range": null,
+    "formula": {
+      "No Filtering": [false, null],
+      "Classic Filtering": [true, 1],
+      "Improved Filtering": [true, 0]
+    },
+    "notes": null
+  },
+  {
+    "panel": "Grain",
+    "setting": "3D Grain Follow Camera",
+    "paths": [
+      "$top.root.texturizedGrainFollowsCamera"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": "True = Grain follows camera"
   },
   {
     "panel": "Rendering",
     "setting": "Rendering Mode",
     "paths": [
-      "$top.root.renderingModeEnhanced","$top.root.renderingModeLightGlaze","$top.root.renderingModeWet"
+      "$top.root.renderingRecursiveMixing",
+      "$top.root.renderingModulatedTransfer",
+      "$top.root.renderingMaxTransfer"
     ],
-    "data_type": "enum",
+    "data_type": "bool",
     "gui_values": [
       "Light Glaze",
-      "Glaze",
-      "Wet",
-      "Dry",
-      "Wet & Glaze"
+      "Uniformed Glaze",
+      "Intense Glaze",
+      "Heavy Glaze",
+      "Uniform Blending",
+      "Intense Blending"
     ],
     "raw_range": null,
     "formula": {
-      "Light Glaze": [null, true, false],
-      "Glaze": [null, false, false],
-      "Wet": [null, false, true],
-      "Wet & Glaze": [true, true, true],
-      "Dry": [false, false, false]
+      "Light Glaze": [false, false, true],
+      "Uniform Glaze": [false, true, true], 
+      "Intense Glaze": [false, false, false], 
+      "Heavy Glaze": [false, true, false], 
+      "Uniform Blending": [true, true, null], 
+      "Intense Blending": [true, false, null]
     },
-    "notes": "Pattern based on rendering mode toggles."
+    "notes": null
+  },
+  {
+    "panel": "Rendering",
+    "setting": "Flow",
+    "paths": [
+      "$top.root.dynamicsGlazedFlow"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Rendering",
+    "setting": "Wet Edges",
+    "paths": [
+      "$top.root.wetEdgesAmount"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Rendering",
+    "setting": "Burnt Edges",
+    "paths": [
+      "$top.root.burntEdgesAmount"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Rendering",
+    "setting": "Burnt Edges Mode",
+    "paths": [
+      "$top.root.burntEdgesBlendMode",
+      "$top.root.burntEdgesBlendModeExtended"
+    ],
+    "data_type": "int",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": {
+      "Multiply": [1, 1],
+      "Darken": [19, 34],
+      "Shade": [19, 19],
+      "Colour Burn": [10, 10],
+      "Linear Burn": [8, 8],
+      "Dark Colour": [25, 0],
+      "Normal": [0, 0],
+      "Lighten": [4, 4],
+      "Screen": [2, 2],
+      "Colour Dodge": [9, 9],
+      "Add": [3, 3],
+      "Lighter Colour": [0, 24],
+      "Overlay": [11, 11],
+      "Soft Light": [17, 17],
+      "Hard Light": [12, 12],
+      "Vivid Light": [0, 21],
+      "Linear Light": [0, 22],
+      "Pin Light": [0, 23],
+      "Hard Mix": [20, 20],
+      "Difference": [6, 6],
+      "Exclusion": [5, 5],
+      "Subtract": [7, 7],
+      "Divide": [26, 26],
+      "Hue": [15, 15],
+      "Saturation": [16, 16],
+      "Colour": [13, 13],
+      "Luminosity": [14, 14],
+      "Behind": [18, 18]
+    },
+    "notes": null
+  },
+  {
+    "panel": "Rendering",
+    "setting": "Blend Mode",
+    "paths": [
+      "$top.root.blendMode",
+      "$top.root.extendedBlend2"
+    ],
+    "data_type": "int",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": {
+      "Multiply": [1, 1],
+      "Darken": [19, 34],
+      "Shade": [19, 19],
+      "Colour Burn": [10, 10],
+      "Linear Burn": [8, 8],
+      "Dark Colour": [25, 0],
+      "Normal": [0, 0],
+      "Lighten": [4, 4],
+      "Screen": [2, 2],
+      "Colour Dodge": [9, 9],
+      "Add": [3, 3],
+      "Lighter Colour": [0, 24],
+      "Overlay": [11, 11],
+      "Soft Light": [17, 17],
+      "Hard Light": [12, 12],
+      "Vivid Light": [0, 21],
+      "Linear Light": [0, 22],
+      "Pin Light": [0, 23],
+      "Hard Mix": [20, 20],
+      "Difference": [6, 6],
+      "Exclusion": [5, 5],
+      "Subtract": [7, 7],
+      "Divide": [26, 26],
+      "Hue": [15, 15],
+      "Saturation": [16, 16],
+      "Colour": [13, 13],
+      "Luminosity": [14, 14],
+      "Behind": [18, 18]
+    },
+    "notes": null
+  },
+  {
+    "panel": "Rendering",
+    "setting": "Luminullce Blending",
+    "paths": [
+      "$top.root.blendGammaCorrect"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Rendering",
+    "setting": "Alpha Threshold",
+    "paths": [
+      "$top.root.alphaThreshold"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Rendering",
+    "setting": "Alpha Threshold Amount",
+    "paths": [
+      "$top.root.alphaThresholdAmount"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Wet Mix",
+    "setting": "Dilution",
+    "paths": [
+      "$top.root.dynamicsMix"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Wet Mix",
+    "setting": "Charge",
+    "paths": [
+      "$top.root.dynamicsLoad"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Wet Mix",
+    "setting": "Attack",
+    "paths": [
+      "$top.root.dynamicsPressureMix"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Wet Mix",
+    "setting": "Pull",
+    "paths": [
+      "$top.root.dynamicsWetAccumulation"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Wet Mix",
+    "setting": "Grade",
+    "paths": [
+      "$top.root.dynamicsMixSoftening"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": "100=smooth"
+  },
+  {
+    "panel": "Wet Mix",
+    "setting": "Blur",
+    "paths": [
+      "$top.root.dynamicsBlur"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Wet Mix",
+    "setting": "Blur Jitter",
+    "paths": [
+      "$top.root.dynamicsBlurJitter"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Wet Mix",
+    "setting": "Wetness Jitter",
+    "paths": [
+      "$top.root.dynamicsWetnessJitter"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stamp Color Jitter - Hue",
+    "paths": [
+      "$top.root.dynamicsJitterHue"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stamp Color Jitter - Saturate",
+    "paths": [
+      "$top.root.dynamicsJitterSaturation"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stamp Color Jitter - Lightness",
+    "paths": [
+      "$top.root.dynamicsJitterLightness"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stamp Color Jitter - Darkness",
+    "paths": [
+      "$top.root.dynamicsJitterDarkness"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stamp Color Jitter - Secondary Colour",
+    "paths": [
+      "$top.root.jitterSecondary"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stroke Color Jitter - Hue",
+    "paths": [
+      "$top.root.dynamicsJitterStrokeHue"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stroke Color Jitter - Saturate",
+    "paths": [
+      "$top.root.dynamicsJitterStrokeSaturation"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stroke Color Jitter - Lightness",
+    "paths": [
+      "$top.root.dynamicsJitterStrokeLightness"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stroke Color Jitter - Darkness",
+    "paths": [
+      "$top.root.dynamicsJitterStrokeDarkness"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Stroke Color Jitter - Secondary Colour",
+    "paths": [
+      "$top.root.jitterStrokeSecondary"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Pressure - Hue",
+    "paths": [
+      "$top.root.dynamicsPressureHue"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Pressure - Saturate",
+    "paths": [
+      "$top.root.dynamicsPressureSaturation"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Pressure - Brightness",
+    "paths": [
+      "$top.root.dynamicsPressureBrightness"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Pressure - Secondary Colour",
+    "paths": [
+      "$top.root.dynamicsPressureSecondaryColor"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Tilt - Hue",
+    "paths": [
+      "$top.root.dynamicsTiltHue"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Tilt - Saturate",
+    "paths": [
+      "$top.root.dynamicsTiltSaturation"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Tilt - Brightness",
+    "paths": [
+      "$top.root.dynamicsTiltBrightness"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Tilt - Secondary Colour",
+    "paths": [
+      "$top.root.dynamicsTiltSecondaryColor"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Barrel Roll - Hue",
+    "paths": [
+      "$top.root.dynamicsRollHue"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Barrel Roll - Saturate",
+    "paths": [
+      "$top.root.dynamicsRollSaturation"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Barrel Roll - Brightness",
+    "paths": [
+      "$top.root.dynamicsRollBrightness"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Color Dynamics",
+    "setting": "Colour Barrel Roll - Secondary Colour",
+    "paths": [
+      "$top.root.dynamicsRollSecondaryColor"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Dynamics",
+    "setting": "Speed Size",
+    "paths": [
+      "$top.root.dynamicsSpeedSize"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Dynamics",
+    "setting": "Speed Opacity",
+    "paths": [
+      "$top.root.dynamicsSpeedOpacity"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Dynamics",
+    "setting": "Speed Spacing",
+    "paths": [
+      "$top.root.plotSpacingSpeed"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*10)",
+    "notes": null
+  },
+  {
+    "panel": "Dynamics",
+    "setting": "Jitter Size",
+    "paths": [
+      "$top.root.dynamicsJitterSize"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Dynamics",
+    "setting": "Jitter Opacity",
+    "paths": [
+      "$top.root.dynamicsJitterOpacity"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure Curve",
+    "paths": [
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[0]"
+    ],
+    "data_type": "curve",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": null,
+    "notes": "Array of {x, y} float pairs for pressure graph"
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure Curve",
+    "paths": [
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[1]"
+    ],
+    "data_type": "curve",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": null,
+    "notes": "Array of {x, y} float pairs for pressure graph "
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure Curve",
+    "paths": [
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[2]"
+    ],
+    "data_type": "curve",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": null,
+    "notes": "Array of {x, y} float pairs for pressure graph (optional)"
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure Curve",
+    "paths": [
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[3]"
+    ],
+    "data_type": "curve",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": null,
+    "notes": "Array of {x, y} float pairs for pressure graph (optional)"
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure Curve",
+    "paths": [
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[4]"
+    ],
+    "data_type": "curve",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": null,
+    "notes": "Array of {x, y} float pairs for pressure graph (optional)"
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure Curve",
+    "paths": [
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[5]"
+    ],
+    "data_type": "curve",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": null,
+    "notes": "Array of {x, y} float pairs for pressure graph (optional)"
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure - Size",
+    "paths": [
+      "$top.root.dynamicsPressureSize"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure - Opacity",
+    "paths": [
+      "$top.root.dynamicsPressureOpacityTransfer"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure - Flow",
+    "paths": [
+      "$top.root.dynamicsPressureOpacity"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Pressure - Bleed",
+    "paths": [
+      "$top.root.dynamicsPressureBleed"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(100 * raw ^ (1/2.21))",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Tilt Angle",
+    "paths": [
+      "$top.root.dynamicsTiltAngle"
+    ],
+    "data_type": "float",
+    "gui_values": "0-90",
+    "raw_range": null,
+    "formula": "round(raw * 90)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Tilt - Opacity",
+    "paths": [
+      "$top.root.dynamicsTiltOpacity"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Tilt - Gradation",
+    "paths": [
+      "$top.root.dynamicsTiltGradation"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Tilt - Bleed",
+    "paths": [
+      "$top.root.dynamicsTiltBleed"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(100 * raw ^ (1/2.21))",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Tilt - Size",
+    "paths": [
+      "$top.root.dynamicsTiltSize"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Tilt - Size Compression",
+    "paths": [
+      "$top.root.dynamicsTiltCompression"
+    ],
+    "data_type": "float",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Barrel Roll - Size",
+    "paths": [
+      "$top.root.dynamicsRollSize"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Barrel Roll - Opacity",
+    "paths": [
+      "$top.root.dynamicsRollOpacity"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Barrel Roll - Bleed",
+    "paths": [
+      "$top.root.dynamicsRollBleed"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Cursor Outline ",
+    "paths": [
+      "$top.root.hoverOutline"
+    ],
+    "data_type": "int",
+    "gui_values": "None, Contrast, Active colour",
+    "raw_range": "0-2",
+    "formula": "0 = None, 1 = Contrast, 2 = Active colour",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Hover Estimated Pressure",
+    "paths": [
+      "$top.root.hoverPressure"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Apple Pencil",
+    "setting": "Hover Fill",
+    "paths": [
+      "$top.root.hoverFill"
+    ],
+    "data_type": "int",
+    "gui_values": "none, all, shape",
+    "raw_range": "0-2",
+    "formula": "0 = None, 1 = All, 2 = Shape",
+    "notes": null
+  },
+  {
+    "panel": "Properties",
+    "setting": "Orient to Screen",
+    "paths": [
+      "$top.root.oriented"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Properties",
+    "setting": "Smudge Pull",
+    "paths": [
+      "$top.root.dynamicsSmudgeAccumulation"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Properties",
+    "setting": "Maximum Size",
+    "paths": [
+      "$top.root.maxSize"
+    ],
+    "data_type": "float",
+    "gui_values": "0-1600%",
+    "raw_range": "0-16",
+    "formula": "round(raw * 100)",
+    "notes": null
+  },
+  {
+    "panel": "Properties",
+    "setting": "Minimum Size",
+    "paths": [
+      "$top.root.minSize"
+    ],
+    "data_type": "float",
+    "gui_values": "0-1600%",
+    "raw_range": "0-16",
+    "formula": "round(raw * 100)",
+    "notes": null
+  },
+  {
+    "panel": "Properties",
+    "setting": "Maximum Opacity",
+    "paths": [
+      "$top.root.maxOpacity"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Properties",
+    "setting": "Minimum Opacity",
+    "paths": [
+      "$top.root.minOpacity"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Materials",
+    "setting": "Metallic Amount",
+    "paths": [
+      "$top.root.metallicAmount"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "100=metalic"
+  },
+  {
+    "panel": "Materials",
+    "setting": "Metallic Scale",
+    "paths": [
+      "$top.root.metallicScale"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-16",
+    "formula": "round(25 * SQRT(raw))",
+    "notes": null
+  },
+  {
+    "panel": "Materials",
+    "setting": "Roughness Amount",
+    "paths": [
+      "$top.root.roughnessAmount"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": "100 = matte"
+  },
+  {
+    "panel": "Materials",
+    "setting": "Roughness Scale",
+    "paths": [
+      "$top.root.roughnessScale"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-16",
+    "formula": "round(25 * SQRT(raw))",
+    "notes": null
+  },
+  {
+    "panel": "Preview",
+    "setting": "Use Stamp Preview",
+    "paths": [
+      "$top.root.stamp"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Preview",
+    "setting": "Size",
+    "paths": [
+      "$top.root.previewSize"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Preview",
+    "setting": "Pressure Minimum",
+    "paths": [
+      "$top.root.previewPressureMinimum"
+    ],
+    "data_type": "float",
+    "gui_values": "0-100%",
+    "raw_range": "0-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Preview",
+    "setting": "Pressure Scale",
+    "paths": [
+      "$top.root.previewPressureScale"
+    ],
+    "data_type": "float",
+    "gui_values": "0-200%",
+    "raw_range": "0-2",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Preview",
+    "setting": "Wet Mix",
+    "paths": [
+      "$top.root.previewWetMixEnabled"
+    ],
+    "data_type": "bool",
+    "gui_values": "on/off",
+    "raw_range": "True/False",
+    "formula": "True/False",
+    "notes": null
+  },
+  {
+    "panel": "Preview",
+    "setting": "Tilt Angle",
+    "paths": [
+      "$top.root.previewTiltAngleOffset"
+    ],
+    "data_type": "float",
+    "gui_values": "-100-100%",
+    "raw_range": "-1-1",
+    "formula": "round(raw*100)",
+    "notes": null
+  },
+  {
+    "panel": "Dual Brush",
+    "setting": "Combine Mode",
+    "paths": [
+      "$top.root.dualBlendMode",
+      "$top.root.dualBlendModeExtended"
+    ],
+    "data_type": "int",
+    "gui_values": null,
+    "raw_range": null,
+    "formula": {
+      "Multiply": [1, 1],
+      "Darken": [19, 34],
+      "Colour Burn": [10, 10],
+      "Linear Burn": [8, 8],
+      "Normal": [0, 0],
+      "Lighten": [4, 4],
+      "Screen": [2, 2],
+      "Colour Dodge": [9, 9],
+      "Overlay": [11, 11],
+      "Hard Mix": [20, 20],
+      "Difference": [6, 6],
+      "Subtract": [7, 7],
+      "Divide": [26, 26],
+      "Linear Height": [28, 28]
+    },
+    "notes": "if the value are not [0, 0], we can be sure that this is part of the dual brush but if it is [0, 0] then it might be or might not be"
   }
 ]
