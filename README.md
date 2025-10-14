@@ -9,7 +9,7 @@ Built on top of the **Plist Viewer** project, it uses a structured schema (`proc
 * **Schema‑Driven Rendering** — Displays brush panels and settings from a JSON definition (not raw plist keys).
 * **Human‑Readable Output** — Decodes numerical and boolean values into GUI‑equivalent sliders, toggles, or modes.
 * **Full Brush Layout** — All panels (Stroke Path, Shape, Grain, Rendering, etc.) stacked in a single scrollable view.
-* **Two‑Column View** — Compare *Raw* and *Decoded* values side by side.
+* **Dual Brush Comparison** — Upload two brushes, view them individually, or diff their raw/decoded values panel by panel.
 * **Safe Formula Evaluation** — Custom sandbox for evaluating math expressions.
 * **Extensible Schema** — Supports formulas, multi‑path composites, and logical mappings.
 
@@ -36,10 +36,11 @@ npm run dev
 
 Then open [http://localhost:3000](http://localhost:3000).
 
-### 4. Load a `.brush` file
+### 4. Load `.brush` files
 
-* Upload a Procreate brush or plist file.
-* The viewer will decode and display its settings.
+* Upload one or two Procreate brushes or plist files.
+* Use the view toggle to inspect File A, File B, or a side‑by‑side comparison of settings that differ.
+* Filter by panel, search across setting names/paths, and export the decoded results.
 
 
 ## Tech Stack
