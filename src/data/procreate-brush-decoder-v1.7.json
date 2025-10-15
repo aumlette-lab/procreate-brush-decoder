@@ -554,7 +554,7 @@
     "gui_values": "Moving/Texturised",
     "raw_range": "0/1",
     "formula": "0 = Moving, 1 = Texturised",
-    "notes": null
+    "notes": "0 = Moving, 1 = Texturised"
   },
   {
     "panel": "Grain",
@@ -1488,9 +1488,9 @@
     ],
     "data_type": "float",
     "gui_values": "on/off",
-    "raw_range": "True/False",
+    "raw_range": "0/1",
     "formula": "True/False",
-    "notes": null
+    "notes": "0 = no size compression, 1 = size compresses with tilt"
   },
   {
     "panel": "Apple Pencil",

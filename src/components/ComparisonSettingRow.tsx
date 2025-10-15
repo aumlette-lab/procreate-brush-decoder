@@ -54,6 +54,11 @@ export function ComparisonSettingRow({ data, showRaw }: ComparisonSettingRowProp
     ? "text-slate-900 dark:text-slate-100"
     : "text-slate-600 dark:text-slate-300";
 
+  const statusLabel = data.differs ? "Different" : "Same";
+  const statusClasses = data.differs
+    ? "border-amber-500/50 bg-amber-500/15 text-amber-700 dark:border-amber-400/40 dark:bg-amber-500/10 dark:text-amber-300"
+    : "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-300";
+
   return (
     <tr className="border-b border-slate-200 last:border-transparent">
       <td className="py-3 pl-6 pr-4 align-top">
@@ -69,6 +74,13 @@ export function ComparisonSettingRow({ data, showRaw }: ComparisonSettingRowProp
           })}
           {noteText ? <p className="leading-snug">{noteText}</p> : null}
         </div>
+      </td>
+      <td className="py-3 px-4 align-top">
+        <span
+          className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide ${statusClasses}`}
+        >
+          {statusLabel}
+        </span>
       </td>
       {showRaw ? (
         <>

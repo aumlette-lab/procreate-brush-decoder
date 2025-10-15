@@ -22,19 +22,21 @@ export function ComparisonPanelView({ panel, settings, showRaw, labelA, labelB }
       <div className="overflow-x-hidden">
         <table className="min-w-full table-fixed divide-y divide-slate-200 dark:divide-slate-700">
           <colgroup>
-            <col style={{ width: showRaw ? "32%" : "34%" }} />
+            <col style={{ width: showRaw ? "26%" : "30%" }} />
+            <col style={{ width: showRaw ? "10%" : "12%" }} />
             {showRaw ? (
               <>
                 <col style={{ width: "16%" }} />
                 <col style={{ width: "16%" }} />
               </>
             ) : null}
-            <col style={{ width: showRaw ? "18%" : "33%" }} />
-            <col style={{ width: showRaw ? "18%" : "33%" }} />
+            <col style={{ width: showRaw ? "16%" : "23%" }} />
+            <col style={{ width: showRaw ? "16%" : "23%" }} />
           </colgroup>
           <thead className="bg-slate-50 text-left text-sm font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
             <tr>
               <th className="py-3 pl-6 pr-4">Setting</th>
+              <th className="px-4 py-3">Status</th>
               {showRaw ? (
                 <>
                   <th className="px-4 py-3 align-bottom">
