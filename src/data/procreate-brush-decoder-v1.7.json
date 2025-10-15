@@ -1358,7 +1358,12 @@
     "panel": "Apple Pencil",
     "setting": "Pressure Curve",
     "paths": [
-      "$top.root.dynamicsPressureOverall.points.NS\\.objects[0]"
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[0]",
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[1]",
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[2]",
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[3]",
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[4]",
+      "$top.root.dynamicsPressureOverall.points.NS\\.objects[5]"
     ],
     "data_type": "curve",
     "gui_values": null,
@@ -1366,66 +1371,7 @@
     "formula": null,
     "notes": "Array of {x, y} float pairs for pressure graph"
   },
-  {
-    "panel": "Apple Pencil",
-    "setting": "Pressure Curve",
-    "paths": [
-      "$top.root.dynamicsPressureOverall.points.NS\\.objects[1]"
-    ],
-    "data_type": "curve",
-    "gui_values": null,
-    "raw_range": null,
-    "formula": null,
-    "notes": "Array of {x, y} float pairs for pressure graph "
-  },
-  {
-    "panel": "Apple Pencil",
-    "setting": "Pressure Curve",
-    "paths": [
-      "$top.root.dynamicsPressureOverall.points.NS\\.objects[2]"
-    ],
-    "data_type": "curve",
-    "gui_values": null,
-    "raw_range": null,
-    "formula": null,
-    "notes": "Array of {x, y} float pairs for pressure graph (optional)"
-  },
-  {
-    "panel": "Apple Pencil",
-    "setting": "Pressure Curve",
-    "paths": [
-      "$top.root.dynamicsPressureOverall.points.NS\\.objects[3]"
-    ],
-    "data_type": "curve",
-    "gui_values": null,
-    "raw_range": null,
-    "formula": null,
-    "notes": "Array of {x, y} float pairs for pressure graph (optional)"
-  },
-  {
-    "panel": "Apple Pencil",
-    "setting": "Pressure Curve",
-    "paths": [
-      "$top.root.dynamicsPressureOverall.points.NS\\.objects[4]"
-    ],
-    "data_type": "curve",
-    "gui_values": null,
-    "raw_range": null,
-    "formula": null,
-    "notes": "Array of {x, y} float pairs for pressure graph (optional)"
-  },
-  {
-    "panel": "Apple Pencil",
-    "setting": "Pressure Curve",
-    "paths": [
-      "$top.root.dynamicsPressureOverall.points.NS\\.objects[5]"
-    ],
-    "data_type": "curve",
-    "gui_values": null,
-    "raw_range": null,
-    "formula": null,
-    "notes": "Array of {x, y} float pairs for pressure graph (optional)"
-  },
+ 
   {
     "panel": "Apple Pencil",
     "setting": "Pressure - Size",
@@ -1592,11 +1538,11 @@
     "gui_values": "None, Contrast, Active colour",
     "raw_range": "0-2",
     "formula": "0 = None, 1 = Contrast, 2 = Active colour",
-    "notes": null
+    "notes": "0 = None, 1 = Contrast, 2 = Active colour"
   },
   {
     "panel": "Apple Pencil",
-    "setting": "Hover Estimated Pressure",
+    "setting": "Hover - Estimated Pressure",
     "paths": [
       "$top.root.hoverPressure"
     ],
@@ -1616,7 +1562,7 @@
     "gui_values": "none, all, shape",
     "raw_range": "0-2",
     "formula": "0 = None, 1 = All, 2 = Shape",
-    "notes": null
+    "notes": "0 = None, 1 = All, 2 = Shape"
   },
   {
     "panel": "Properties",

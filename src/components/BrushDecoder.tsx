@@ -180,7 +180,6 @@ export function BrushDecoder({ plistA, plistB, activeView, labelA, labelB }: Bru
   const filteredComparison = useMemo(() => {
     if (activeView !== "compare" || !comparisonData.length) return [];
     return comparisonData.filter(item => {
-      if (!item.differs) return false;
       const matchesPanel = panelFilter === ALL_PANELS || item.entry.panel === panelFilter;
       if (!matchesPanel) return false;
       if (!searchNeedle) return true;
