@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useMemo, useState } from "react";
+import { ChangeEvent, DragEvent, useMemo, useState } from "react";
 import { BrushDecoder, type ActiveView } from "@/components/BrushDecoder";
 
 type Slot = "A" | "B";
@@ -35,6 +35,7 @@ export default function Page() {
 
   const [loadingSlot, setLoadingSlot] = useState<Slot | null>(null);
   const [activeView, setActiveView] = useState<ActiveView>("A");
+  const [dragOverSlot, setDragOverSlot] = useState<Slot | null>(null);
 
   const hasFileA = useMemo(() => plistA !== null, [plistA]);
   const hasFileB = useMemo(() => plistB !== null, [plistB]);
@@ -97,6 +98,54 @@ export default function Page() {
       if (!file) return;
       void parseFile(file, slot);
       event.target.value = "";
+    };
+  }
+
+  function handleDragEnter(slot: Slot) {
+    return (event: DragEvent<HTMLDivElement>) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (event.dataTransfer) {
+        event.dataTransfer.dropEffect = "copy";
+      }
+      if (dragOverSlot !== slot) {
+        setDragOverSlot(slot);
+      }
+    };
+  }
+
+  function handleDragOver(slot: Slot) {
+    return (event: DragEvent<HTMLDivElement>) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (event.dataTransfer) {
+        event.dataTransfer.dropEffect = "copy";
+      }
+    };
+  }
+
+  function handleDragLeave(slot: Slot) {
+    return (event: DragEvent<HTMLDivElement>) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const related = event.relatedTarget;
+      if (related && event.currentTarget.contains(related as Node)) {
+        return;
+      }
+      if (dragOverSlot === slot) {
+        setDragOverSlot(null);
+      }
+    };
+  }
+
+  function handleDrop(slot: Slot) {
+    return (event: DragEvent<HTMLDivElement>) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setDragOverSlot(null);
+      const file = event.dataTransfer.files?.[0];
+      if (!file) return;
+      void parseFile(file, slot);
     };
   }
 
@@ -165,7 +214,16 @@ export default function Page() {
               return (
                 <div
                   key={slot}
-                  className="flex h-full flex-col justify-between rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-900/40"
+                  className={`flex h-full flex-col justify-between rounded-lg border p-4 transition
+                  ${
+                    dragOverSlot === slot
+                      ? "border-slate-400 bg-slate-100 dark:border-slate-500 dark:bg-slate-800/60"
+                      : "border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-900/40"
+                  }`}
+                  onDragEnter={handleDragEnter(slot)}
+                  onDragOver={handleDragOver(slot)}
+                  onDragLeave={handleDragLeave(slot)}
+                  onDrop={handleDrop(slot)}
                 >
                   <div className="space-y-2">
                     <div className="flex items-start justify-between">
@@ -223,7 +281,9 @@ export default function Page() {
               );
             })}
           </div>
-          <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">Max file size: 10 MB per upload.</p>
+          <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">
+            Max file size: 10 MB per upload. Drag and drop files onto either card or use the picker.
+          </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
             <button
