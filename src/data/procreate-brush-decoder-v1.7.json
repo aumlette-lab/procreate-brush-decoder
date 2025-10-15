@@ -447,7 +447,7 @@
     "gui_values": "circle or ellipse",
     "raw_range": "0-1",
     "formula": "if Raw = 1 then no distortion (circle), else if 0 < Raw < 1 then increasing horizontal/vertical compression (ellipse)",
-    "notes": null
+    "notes": "1 = Circle, <1 = Ellipse"
   },
   {
     "panel": "Shape",

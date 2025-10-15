@@ -1,3 +1,4 @@
+import { BooleanBadge } from "@/components/BooleanBadge";
 import {
   formatDecodedValue,
   formatNotes,
@@ -37,6 +38,11 @@ export function ComparisonSettingRow({ data, showRaw }: ComparisonSettingRowProp
   const decodedDisplayA = formatDecodedValue(entry, decodedValueA);
   const decodedDisplayB = formatDecodedValue(entry, decodedValueB);
 
+  const booleanBadgeA =
+    entry.data_type === "bool" ? <BooleanBadge value={decodedValueA} dataType={entry.data_type} /> : null;
+  const booleanBadgeB =
+    entry.data_type === "bool" ? <BooleanBadge value={decodedValueB} dataType={entry.data_type} /> : null;
+
   const descriptorA = resolveDescriptor(entry.notes, decodedDisplayA);
   const descriptorB = resolveDescriptor(entry.notes, decodedDisplayB);
 
@@ -69,13 +75,13 @@ export function ComparisonSettingRow({ data, showRaw }: ComparisonSettingRowProp
         </>
       ) : null}
       <td className={`py-3 px-4 align-top break-words ${decodedClassName}`}>
-        {decodedDisplayA || "—"}
+        {booleanBadgeA ? <div className="inline-flex items-center gap-2">{booleanBadgeA}</div> : decodedDisplayA || "—"}
         {descriptorA ? (
           <div className="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">{descriptorA}</div>
         ) : null}
       </td>
       <td className={`py-3 pl-4 pr-6 align-top break-words ${decodedClassName}`}>
-        {decodedDisplayB || "—"}
+        {booleanBadgeB ? <div className="inline-flex items-center gap-2">{booleanBadgeB}</div> : decodedDisplayB || "—"}
         {descriptorB ? (
           <div className="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">{descriptorB}</div>
         ) : null}

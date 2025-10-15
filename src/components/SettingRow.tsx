@@ -1,3 +1,4 @@
+import { BooleanBadge } from "@/components/BooleanBadge";
 import type { DecodedSetting } from "@/lib/decodeEngine";
 import {
   formatDecodedValue,
@@ -21,6 +22,10 @@ export function SettingRow({ data, showRaw }: SettingRowProps) {
   const noteText = formatNotes(entry.notes);
   const decodedDescriptor = resolveDescriptor(entry.notes, decoded);
 
+  const booleanBadge =
+    entry.data_type === "bool" ? <BooleanBadge value={decodedValue} dataType={entry.data_type} /> : null;
+  const decodedFallback = decoded || "—";
+
   return (
     <tr className="border-b border-slate-200 last:border-transparent">
       <td className="py-3 pl-6 pr-4 align-top">
@@ -43,7 +48,7 @@ export function SettingRow({ data, showRaw }: SettingRowProps) {
         </td>
       ) : null}
       <td className="py-3 pl-4 pr-6 align-top break-words text-slate-900 dark:text-slate-100">
-        {decoded || "—"}
+        {booleanBadge ? <div className="inline-flex items-center gap-2">{booleanBadge}</div> : decodedFallback}
         {decodedDescriptor ? (
           <div className="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">{decodedDescriptor}</div>
         ) : null}
