@@ -8,6 +8,9 @@ type ToolbarProps = {
   onSearchChange: (term: string) => void;
   showRaw: boolean;
   onToggleRaw: (show: boolean) => void;
+  statusFilter: "all" | "same" | "different";
+  onStatusFilterChange: (value: "all" | "same" | "different") => void;
+  isComparisonView: boolean;
 };
 
 export function Toolbar({
@@ -18,6 +21,9 @@ export function Toolbar({
   onSearchChange,
   showRaw,
   onToggleRaw,
+  statusFilter,
+  onStatusFilterChange,
+  isComparisonView,
 }: ToolbarProps) {
   function handlePanelChange(event: ChangeEvent<HTMLSelectElement>) {
     onPanelChange(event.target.value);
@@ -29,6 +35,10 @@ export function Toolbar({
 
   function handleShowRawChange(event: ChangeEvent<HTMLInputElement>) {
     onToggleRaw(event.target.checked);
+  }
+
+  function handleStatusChange(event: ChangeEvent<HTMLSelectElement>) {
+    onStatusFilterChange(event.target.value as "all" | "same" | "different");
   }
 
   return (
@@ -55,6 +65,23 @@ export function Toolbar({
               {panel}
             </option>
           ))}
+        </select>
+      </div>
+      <div
+        className={`flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200 ${
+          isComparisonView ? "" : "opacity-60"
+        }`}
+      >
+        <span className="font-medium">Status</span>
+        <select
+          value={statusFilter}
+          onChange={handleStatusChange}
+          disabled={!isComparisonView}
+          className="rounded-md border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 focus:border-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:disabled:bg-slate-800/60 dark:disabled:text-slate-500"
+        >
+          <option value="all">All</option>
+          <option value="different">Different</option>
+          <option value="same">Same</option>
         </select>
       </div>
       <div className="relative flex-1 min-w-[200px]">

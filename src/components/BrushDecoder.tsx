@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ComparisonPanelView } from "@/components/ComparisonPanelView";
 import { PanelView } from "@/components/PanelView";
 import { Toolbar } from "@/components/Toolbar";
@@ -124,6 +124,7 @@ export function BrushDecoder({ plistA, plistB, activeView, labelA, labelB }: Bru
   const [showRaw, setShowRaw] = useState(true);
   const [panelFilter, setPanelFilter] = useState<string>(ALL_PANELS);
   const [searchTerm, setSearchTerm] = useState("");
+  const [statusFilter, setStatusFilter] = useState<"all" | "same" | "different">("all");
 
   const panelOptions = useMemo(() => getPanelNames(SCHEMA), []);
 
@@ -182,6 +183,11 @@ export function BrushDecoder({ plistA, plistB, activeView, labelA, labelB }: Bru
     return comparisonData.filter(item => {
       const matchesPanel = panelFilter === ALL_PANELS || item.entry.panel === panelFilter;
       if (!matchesPanel) return false;
+      const matchesStatus =
+        statusFilter === "all" ||
+        (statusFilter === "different" && item.differs) ||
+        (statusFilter === "same" && !item.differs);
+      if (!matchesStatus) return false;
       if (!searchNeedle) return true;
       const haystack = [
         item.entry.setting,
@@ -193,12 +199,18 @@ export function BrushDecoder({ plistA, plistB, activeView, labelA, labelB }: Bru
       ];
       return haystack.some(value => value.toLowerCase().includes(searchNeedle));
     });
-  }, [activeView, comparisonData, panelFilter, searchNeedle]);
+  }, [activeView, comparisonData, panelFilter, searchNeedle, statusFilter]);
 
   const groupedComparison = useMemo(() => {
     if (!filteredComparison.length) return new Map<string, ComparisonSetting[]>();
     return groupComparisonByPanel(filteredComparison);
   }, [filteredComparison]);
+
+  useEffect(() => {
+    if (activeView !== "compare" && statusFilter !== "all") {
+      setStatusFilter("all");
+    }
+  }, [activeView, statusFilter]);
 
   const visiblePanels =
     panelFilter === ALL_PANELS ? panelOptions : panelOptions.filter(panel => panel === panelFilter);
@@ -263,6 +275,9 @@ export function BrushDecoder({ plistA, plistB, activeView, labelA, labelB }: Bru
         onSearchChange={setSearchTerm}
         showRaw={showRaw}
         onToggleRaw={setShowRaw}
+        statusFilter={statusFilter}
+        onStatusFilterChange={setStatusFilter}
+        isComparisonView={activeView === "compare"}
       />
 
       {activeView === "compare" ? renderComparisonView() : renderSingleView()}
