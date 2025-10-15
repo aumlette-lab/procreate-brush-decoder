@@ -1484,7 +1484,7 @@
     "gui_values": "0-90",
     "raw_range": null,
     "formula": "round(raw * 90)",
-    "notes": null
+    "notes": "Degrees (0-90)"
   },
   {
     "panel": "Apple Pencil",

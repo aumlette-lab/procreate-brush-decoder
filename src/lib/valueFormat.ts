@@ -91,12 +91,21 @@ function deriveUnit(entry: MappingEntry): string | null {
   return null;
 }
 
+function notesIndicateDegrees(notes: string | null | undefined): boolean {
+  if (!notes) return false;
+  return /degree/i.test(notes);
+}
+
 export function formatDecodedValue(entry: MappingEntry, value: unknown): string {
-  const rendered = formatValue(value);
+  let rendered = formatValue(value);
   const unit = deriveUnit(entry);
-  if (!unit) return rendered;
-  if (!rendered) return rendered;
-  return unit.trim() === "%" ? `${rendered}${unit}` : `${rendered} ${unit}`;
+  if (unit && rendered) {
+    rendered = unit.trim() === "%" ? `${rendered}${unit}` : `${rendered} ${unit}`;
+  }
+  if (!unit && rendered && notesIndicateDegrees(entry.notes) && !rendered.trim().endsWith("°")) {
+    rendered = `${rendered}°`;
+  }
+  return rendered;
 }
 
 export function formatNotes(value: unknown): string | null {
