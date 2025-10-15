@@ -900,7 +900,7 @@
   },
   {
     "panel": "Rendering",
-    "setting": "Luminullce Blending",
+    "setting": "Luminance Blending",
     "paths": [
       "$top.root.blendGammaCorrect"
     ],
