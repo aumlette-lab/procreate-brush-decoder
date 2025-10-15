@@ -1,4 +1,4 @@
-import { BooleanBadge } from "@/components/BooleanBadge";
+import { BooleanBadge, coerceBooleanDisplay } from "@/components/BooleanBadge";
 import {
   formatDecodedValue,
   formatNotes,
@@ -38,10 +38,12 @@ export function ComparisonSettingRow({ data, showRaw }: ComparisonSettingRowProp
   const decodedDisplayA = formatDecodedValue(entry, decodedValueA);
   const decodedDisplayB = formatDecodedValue(entry, decodedValueB);
 
-  const booleanBadgeA =
-    entry.data_type === "bool" ? <BooleanBadge value={decodedValueA} dataType={entry.data_type} /> : null;
-  const booleanBadgeB =
-    entry.data_type === "bool" ? <BooleanBadge value={decodedValueB} dataType={entry.data_type} /> : null;
+  const coercedBooleanA =
+    entry.data_type === "bool" ? coerceBooleanDisplay(decodedValueA) : null;
+  const coercedBooleanB =
+    entry.data_type === "bool" ? coerceBooleanDisplay(decodedValueB) : null;
+  const booleanBadgeA = coercedBooleanA !== null ? <BooleanBadge value={coercedBooleanA} /> : null;
+  const booleanBadgeB = coercedBooleanB !== null ? <BooleanBadge value={coercedBooleanB} /> : null;
 
   const descriptorA = resolveDescriptor(entry.notes, decodedDisplayA);
   const descriptorB = resolveDescriptor(entry.notes, decodedDisplayB);

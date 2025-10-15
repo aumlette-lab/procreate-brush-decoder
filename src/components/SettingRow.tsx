@@ -1,4 +1,4 @@
-import { BooleanBadge } from "@/components/BooleanBadge";
+import { BooleanBadge, coerceBooleanDisplay } from "@/components/BooleanBadge";
 import type { DecodedSetting } from "@/lib/decodeEngine";
 import {
   formatDecodedValue,
@@ -22,8 +22,10 @@ export function SettingRow({ data, showRaw }: SettingRowProps) {
   const noteText = formatNotes(entry.notes);
   const decodedDescriptor = resolveDescriptor(entry.notes, decoded);
 
+  const coercedBoolean =
+    entry.data_type === "bool" ? coerceBooleanDisplay(decodedValue) : null;
   const booleanBadge =
-    entry.data_type === "bool" ? <BooleanBadge value={decodedValue} dataType={entry.data_type} /> : null;
+    coercedBoolean !== null ? <BooleanBadge value={coercedBoolean} /> : null;
   const decodedFallback = decoded || "—";
 
   return (

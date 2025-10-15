@@ -1,9 +1,4 @@
-type BooleanBadgeProps = {
-  value: unknown;
-  dataType?: string | null;
-};
-
-function coerceBoolean(value: unknown): boolean | null {
+export function coerceBooleanDisplay(value: unknown): boolean | null {
   if (typeof value === "boolean") return value;
   if (typeof value === "number") {
     if (Number.isNaN(value)) return null;
@@ -22,22 +17,17 @@ function coerceBoolean(value: unknown): boolean | null {
   return null;
 }
 
-export function BooleanBadge({ value, dataType }: BooleanBadgeProps) {
-  const boolValue = coerceBoolean(value);
-  if (dataType && dataType !== "bool") {
-    return null;
-  }
-  if (boolValue === null) {
-    return null;
-  }
+type BooleanBadgeProps = {
+  value: boolean;
+};
 
+export function BooleanBadge({ value }: BooleanBadgeProps) {
   const baseClasses =
     "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide";
 
-  const stateClasses = boolValue
+  const stateClasses = value
     ? "border-emerald-500/50 bg-emerald-500/15 text-emerald-700 dark:border-emerald-400/40 dark:bg-emerald-500/10 dark:text-emerald-300"
     : "border-slate-300 bg-slate-200 text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300";
 
-  return <span className={`${baseClasses} ${stateClasses}`}>{boolValue ? "Enabled" : "Disabled"}</span>;
+  return <span className={`${baseClasses} ${stateClasses}`}>{value ? "Enabled" : "Disabled"}</span>;
 }
-
