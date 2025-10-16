@@ -9,7 +9,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-2.0",
     "formula": "round(72.943 * (raw ^ 0.4558))",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Stroke Path",
@@ -21,7 +22,9 @@
     "gui_values": "0-100%",
     "raw_range": "0-10",
     "formula": "round(raw*10)",
-    "notes": null
+    "notes": null,
+    "default": 0
+
   },
   {
     "panel": "Stroke Path",
@@ -33,7 +36,8 @@
     "gui_values": "0-200%",
     "raw_range": "0-13.7844",
     "formula": "round(60.6919 * (raw ^ 0.4545))",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Stroke Path",
@@ -45,7 +49,8 @@
     "gui_values": "0-200%",
     "raw_range": "0-13.7844",
     "formula": "round(60.6919 * (raw ^ 0.4545))",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Stroke Path",
@@ -57,7 +62,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Stabilization",
@@ -69,7 +75,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Stabilization",
@@ -81,7 +88,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Stabilization",
@@ -93,7 +101,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Stabilization",
@@ -105,7 +114,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Stabilization",
@@ -117,7 +127,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -129,7 +140,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "Pressure taper start"
+    "notes": "Pressure taper start",
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -141,7 +153,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "Pressure taper end"
+    "notes": "Pressure taper end",
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -153,7 +166,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Taper",
@@ -165,7 +179,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -177,7 +192,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -189,7 +205,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -201,7 +218,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "0% = Sharp, 100% = Blunt"
+    "notes": "0% = Sharp, 100% = Blunt",
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -213,7 +231,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Taper",
@@ -225,7 +244,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "Touch taper start"
+    "notes": "Touch taper start",
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -237,7 +257,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "Touch taper end"
+    "notes": "Touch taper end",
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -249,7 +270,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Taper",
@@ -261,7 +283,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -273,7 +296,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -285,7 +309,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "0% = Sharp, 100% = Blunt"
+    "notes": "0% = Sharp, 100% = Blunt",
+    "default": 0
   },
   {
     "panel": "Taper",
@@ -297,7 +322,8 @@
     "gui_values": "on/off",
     "raw_range": "0/1",
     "formula": "0 = classic taper on, 1 = classic taper off",
-    "notes": "0 = classic taper on, 1 = classic taper off"
+    "notes": "0 = classic taper on, 1 = classic taper off",
+    "default": 0
   },
   {
     "panel": "Shape",
@@ -309,7 +335,8 @@
     "gui_values": null,
     "raw_range": null,
     "formula": null,
-    "notes": "path of the shape file"
+    "notes": "path of the shape file",
+    "default": ""
   },
   {
     "panel": "Shape",
@@ -339,7 +366,8 @@
         true
       ]
     },
-    "notes": null
+    "notes": null,
+    "default": "[false, false]"
   },
   {
     "panel": "Shape",
@@ -347,11 +375,12 @@
     "paths": [
       "$top.root.shapeRollMode"
     ],
-    "data_type": "int",
+    "data_type": "bool",
     "gui_values": "on/off",
     "raw_range": "0/1",
-    "formula": "0 = Off, 1 = On",
-    "notes": null
+    "formula": "raw == 1",
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Shape",
@@ -363,7 +392,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": "Controls stamp rotation offset"
+    "notes": "Controls stamp rotation offset",
+    "default": 0
   },
   {
     "panel": "Shape",
@@ -375,7 +405,8 @@
     "gui_values": "0-200%",
     "raw_range": "0-2",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Shape",
@@ -387,7 +418,8 @@
     "gui_values": "1-16",
     "raw_range": "0-1",
     "formula": "round(raw * 16)",
-    "notes": null
+    "notes": null,
+    "default": 1
   },
   {
     "panel": "Shape",
@@ -399,7 +431,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Shape",
@@ -411,7 +444,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Shape",
@@ -423,7 +457,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Shape",
@@ -435,7 +470,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Shape",
@@ -447,7 +483,8 @@
     "gui_values": "circle or ellipse",
     "raw_range": "0-1",
     "formula": "if Raw = 1 then no distortion (circle), else if 0 < Raw < 1 then increasing horizontal/vertical compression (ellipse)",
-    "notes": "1 = Circle, <1 = Ellipse"
+    "notes": "1 = Circle, <1 = Ellipse",
+    "default": 1
   },
   {
     "panel": "Shape",
@@ -459,7 +496,8 @@
     "gui_values": "0-360",
     "raw_range": null,
     "formula": "round(raw * 180 / PI())",
-    "notes": "Degrees (0-360)"
+    "notes": "Degrees (0-360)",
+    "default": 0
   },
   {
     "panel": "Shape",
@@ -472,7 +510,8 @@
     "gui_values": "-100-100%",
     "raw_range": null,
     "formula": "(raw[0] === 1 && raw[1] === 1) ? 0 : (raw[0] === 1 && raw[1] < 1) ? round((1 - raw[1]) * 100) : (raw[1] === 1 && raw[0] < 1) ? -round((1 - raw[0]) * 100) : 0",
-    "notes": null
+    "notes": null,
+    "default": "[1, 1]"
   },
   {
     "panel": "Shape",
@@ -485,7 +524,8 @@
     "gui_values": "-100-100%",
     "raw_range": null,
     "formula": "(raw[0] === 1 && raw[1] === 1) ? 0 : (raw[0] === 1 && raw[1] < 1) ? round((1 - raw[1]) * 100) : (raw[1] === 1 && raw[0] < 1) ? -round((1 - raw[0]) * 100) : 0",
-    "notes": null
+    "notes": null,
+    "default": "[1, 1]"
   },
   {
     "panel": "Shape",
@@ -497,7 +537,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Shape",
@@ -509,7 +550,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Shape",
@@ -530,7 +572,8 @@
       "Classic Filtering": [true, 1],
       "Improved Filtering": [true, 0]
     },
-    "notes": null
+    "notes": null,
+    "default": "[false, null]"
   },
   {
     "panel": "Grain",
@@ -542,7 +585,8 @@
     "gui_values": null,
     "raw_range": null,
     "formula": null,
-    "notes": "path of the grain file"
+    "notes": "path of the grain file",
+    "default": ""
   },
   {
     "panel": "Grain",
@@ -554,7 +598,8 @@
     "gui_values": "Moving/Texturised",
     "raw_range": "0/1",
     "formula": "0 = Moving, 1 = Texturised",
-    "notes": "0 = Moving, 1 = Texturised"
+    "notes": "0 = Moving, 1 = Texturised",
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -566,7 +611,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "0 = stamp, 100 = rolling"
+    "notes": "0 = stamp, 100 = rolling",
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -578,7 +624,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-16",
     "formula": "round(25 * SQRT(raw))",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -590,7 +637,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "0 = follow size, 100 = cropped"
+    "notes": "0 = follow size, 100 = cropped",
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -602,7 +650,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": "100 = follow stroke"
+    "notes": "100 = follow stroke",
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -614,7 +663,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -626,7 +676,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -638,7 +689,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null, 
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -650,7 +702,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Grain",
@@ -691,7 +744,8 @@
       "Height": [27, 27],
       "Linear Height": [28, 28]
     },
-    "notes": null
+    "notes": null,
+    "default": "[1, 1]"
   },
   {
     "panel": "Grain",
@@ -703,7 +757,8 @@
     "gui_values": "-75-75%",
     "raw_range": "-0.75-0.75",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -715,7 +770,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Grain",
@@ -736,7 +792,8 @@
       "Classic Filtering": [true, 1],
       "Improved Filtering": [true, 0]
     },
-    "notes": null
+    "notes": null,
+    "default": "[false, null]"
   },
   {
     "panel": "Grain",
@@ -748,7 +805,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": "True = Grain follows camera"
+    "notes": "True = Grain follows camera",
+    "default": false
   },
   {
     "panel": "Rendering",
@@ -776,7 +834,8 @@
       "Uniform Blending": [true, true, null], 
       "Intense Blending": [true, false, null]
     },
-    "notes": null
+    "notes": null,
+    "default": "[false, false, true]"
   },
   {
     "panel": "Rendering",
@@ -788,7 +847,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Rendering",
@@ -800,7 +860,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Rendering",
@@ -812,7 +873,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Rendering",
@@ -854,7 +916,8 @@
       "Luminosity": [14, 14],
       "Behind": [18, 18]
     },
-    "notes": null
+    "notes": null,
+    "default": "depends on $top.root.burntEdgesBlendMode"
   },
   {
     "panel": "Rendering",
@@ -896,7 +959,8 @@
       "Luminosity": [14, 14],
       "Behind": [18, 18]
     },
-    "notes": null
+    "notes": null,
+    "default": "depends on $top.root.blendMode"
   },
   {
     "panel": "Rendering",
@@ -908,7 +972,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Rendering",
@@ -920,7 +985,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Rendering",
@@ -932,7 +998,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Wet Mix",
@@ -944,7 +1011,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Wet Mix",
@@ -956,7 +1024,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Wet Mix",
@@ -968,7 +1037,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Wet Mix",
@@ -980,7 +1050,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Wet Mix",
@@ -992,7 +1063,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": "100=smooth"
+    "notes": "100=smooth",
+    "default": 0
   },
   {
     "panel": "Wet Mix",
@@ -1004,7 +1076,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Wet Mix",
@@ -1016,7 +1089,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Wet Mix",
@@ -1028,7 +1102,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1040,7 +1115,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1052,7 +1128,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1064,7 +1141,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1076,7 +1154,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1088,7 +1167,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1100,7 +1180,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1112,7 +1193,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1124,7 +1206,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1136,7 +1219,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1148,7 +1232,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1160,7 +1245,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1172,7 +1258,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1184,7 +1271,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1196,7 +1284,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1208,7 +1297,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1220,7 +1310,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1232,7 +1323,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1244,7 +1336,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1256,7 +1349,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1268,7 +1362,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1280,7 +1375,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Color Dynamics",
@@ -1292,7 +1388,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Dynamics",
@@ -1304,7 +1401,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Dynamics",
@@ -1316,7 +1414,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Dynamics",
@@ -1328,7 +1427,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*10)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Dynamics",
@@ -1340,7 +1440,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Dynamics",
@@ -1352,7 +1453,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1369,9 +1471,9 @@
     "gui_values": null,
     "raw_range": null,
     "formula": null,
-    "notes": "Array of {x, y} float pairs for pressure graph"
+    "notes": "Array of {x, y} float pairs for pressure graph",
+    "default": "[{\"x\": 0.0, \"y\": 0.0}, {\"x\": 1.0, \"y\": 1.0}, \"$undefined\", \"$undefined\", \"$undefined\", \"$undefined\"]"
   },
- 
   {
     "panel": "Apple Pencil",
     "setting": "Pressure - Size",
@@ -1382,7 +1484,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1394,7 +1497,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1406,7 +1510,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1418,7 +1523,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(100 * raw ^ (1/2.21))",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1430,7 +1536,8 @@
     "gui_values": "0-90",
     "raw_range": null,
     "formula": "round(raw * 90)",
-    "notes": "Degrees (0-90)"
+    "notes": "Degrees (0-90)",
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1442,7 +1549,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1454,7 +1562,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1466,7 +1575,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(100 * raw ^ (1/2.21))",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1478,7 +1588,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1490,7 +1601,8 @@
     "gui_values": "on/off",
     "raw_range": "0/1",
     "formula": "True/False",
-    "notes": "0 = no size compression, 1 = size compresses with tilt"
+    "notes": "0 = no size compression, 1 = size compresses with tilt",
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1502,7 +1614,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1514,7 +1627,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1526,7 +1640,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1538,7 +1653,8 @@
     "gui_values": "None, Contrast, Active colour",
     "raw_range": "0-2",
     "formula": "0 = None, 1 = Contrast, 2 = Active colour",
-    "notes": "0 = None, 1 = Contrast, 2 = Active colour"
+    "notes": "0 = None, 1 = Contrast, 2 = Active colour",
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1550,7 +1666,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Apple Pencil",
@@ -1562,7 +1679,8 @@
     "gui_values": "none, all, shape",
     "raw_range": "0-2",
     "formula": "0 = None, 1 = All, 2 = Shape",
-    "notes": "0 = None, 1 = All, 2 = Shape"
+    "notes": "0 = None, 1 = All, 2 = Shape",
+    "default": 0
   },
   {
     "panel": "Properties",
@@ -1574,7 +1692,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Properties",
@@ -1586,7 +1705,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Properties",
@@ -1598,7 +1718,8 @@
     "gui_values": "0-1600%",
     "raw_range": "0-16",
     "formula": "round(raw * 100)",
-    "notes": null
+    "notes": null,
+    "default": 1
   },
   {
     "panel": "Properties",
@@ -1610,7 +1731,8 @@
     "gui_values": "0-1600%",
     "raw_range": "0-16",
     "formula": "round(raw * 100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Properties",
@@ -1622,7 +1744,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 1
   },
   {
     "panel": "Properties",
@@ -1634,7 +1757,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Materials",
@@ -1646,7 +1770,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "100=metalic"
+    "notes": "100=metalic",
+    "default": 0
   },
   {
     "panel": "Materials",
@@ -1658,7 +1783,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-16",
     "formula": "round(25 * SQRT(raw))",
-    "notes": null
+    "notes": null,
+    "default": 0.1599999964237213
   },
   {
     "panel": "Materials",
@@ -1670,7 +1796,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": "100 = matte"
+    "notes": "100 = matte",
+    "default": 0.5
   },
   {
     "panel": "Materials",
@@ -1682,7 +1809,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-16",
     "formula": "round(25 * SQRT(raw))",
-    "notes": null
+    "notes": null,
+    "default": 0.1599999964237213
   },
   {
     "panel": "Preview",
@@ -1694,7 +1822,8 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": false
   },
   {
     "panel": "Preview",
@@ -1706,7 +1835,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Preview",
@@ -1718,7 +1848,8 @@
     "gui_values": "0-100%",
     "raw_range": "0-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Preview",
@@ -1730,7 +1861,8 @@
     "gui_values": "0-200%",
     "raw_range": "0-2",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 1
   },
   {
     "panel": "Preview",
@@ -1742,7 +1874,9 @@
     "gui_values": "on/off",
     "raw_range": "True/False",
     "formula": "True/False",
-    "notes": null
+    "notes": null,
+    "default": true
+
   },
   {
     "panel": "Preview",
@@ -1754,7 +1888,8 @@
     "gui_values": "-100-100%",
     "raw_range": "-1-1",
     "formula": "round(raw*100)",
-    "notes": null
+    "notes": null,
+    "default": 0
   },
   {
     "panel": "Dual Brush",
@@ -1782,6 +1917,7 @@
       "Divide": [26, 26],
       "Linear Height": [28, 28]
     },
-    "notes": null
+    "notes": null,
+    "default": "[0,0]"
   }
 ]

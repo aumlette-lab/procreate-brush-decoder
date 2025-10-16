@@ -62,6 +62,39 @@ export function formatRawValue(value: unknown): string {
   return formatRawPrimitive(value);
 }
 
+function formatCurveCoordinate(value: number): string {
+  if (!Number.isFinite(value)) return String(value);
+  const fixed = value.toFixed(4);
+  const trimmed = fixed.replace(/(\.\d*?[1-9])0+$/, "$1").replace(/\.0+$/, ".0");
+  return trimmed;
+}
+
+function formatCurvePoint(value: unknown): string {
+  if (value === undefined) return "undefined";
+  if (value === null) return "null";
+  if (Array.isArray(value) && value.length === 2) {
+    const [x, y] = value;
+    if (typeof x === "number" && typeof y === "number") {
+      return `{${formatCurveCoordinate(x)}, ${formatCurveCoordinate(y)}}`;
+    }
+  }
+  if (typeof value === "object" && value !== null) {
+    const maybeX = (value as Record<string, unknown>).x;
+    const maybeY = (value as Record<string, unknown>).y;
+    if (typeof maybeX === "number" && typeof maybeY === "number") {
+      return `{${formatCurveCoordinate(maybeX)}, ${formatCurveCoordinate(maybeY)}}`;
+    }
+  }
+  return formatValue(value);
+}
+
+function formatCurveValue(value: unknown): string {
+  if (!Array.isArray(value)) {
+    return formatValue(value);
+  }
+  return value.map(item => formatCurvePoint(item)).join(", ");
+}
+
 function deriveUnit(entry: MappingEntry): string | null {
   const { gui_values: guiValues } = entry;
   if (!guiValues) return null;
@@ -97,7 +130,7 @@ function notesIndicateDegrees(notes: string | null | undefined): boolean {
 }
 
 export function formatDecodedValue(entry: MappingEntry, value: unknown): string {
-  let rendered = formatValue(value);
+  let rendered = entry.data_type === "curve" ? formatCurveValue(value) : formatValue(value);
   const unit = deriveUnit(entry);
   if (unit && rendered) {
     rendered = unit.trim() === "%" ? `${rendered}${unit}` : `${rendered} ${unit}`;

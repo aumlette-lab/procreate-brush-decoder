@@ -9,4 +9,5 @@ export interface MappingEntry {
   raw_range?: [number, number] | string | null;
   formula?: string | Record<string, (boolean | number | null)[]> | null;
   notes?: string | null;
+  default?: unknown;
 }
