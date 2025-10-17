@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { ComparisonPanelView } from "@/components/ComparisonPanelView";
 import { PanelView } from "@/components/PanelView";
 import { Toolbar } from "@/components/Toolbar";
 import schemaData from "@/data/procreate-brush-decoder-v1.7.json";
 import { decodeEntries, type DecodedSetting } from "@/lib/decodeEngine";
 import { normalisePlist } from "@/lib/plist";
+import { formatDecodedValue, formatRawValue } from "@/lib/valueFormat";
 import type { MappingEntry } from "@/types/schema";
 import type { ComparisonSetting } from "@/components/ComparisonSettingRow";
 
@@ -19,6 +21,8 @@ type BrushDecoderProps = {
   activeView: ActiveView;
   labelA?: string | null;
   labelB?: string | null;
+  stickyOffset?: number;
+  toolbarContainer?: HTMLElement | null;
 };
 
 function getPanelNames(entries: MappingEntry[]): string[] {
@@ -120,7 +124,27 @@ function groupComparisonByPanel(settings: ComparisonSetting[]): Map<string, Comp
   return groups;
 }
 
-export function BrushDecoder({ plistA, plistB, activeView, labelA, labelB }: BrushDecoderProps) {
+function formatRawExport(values: unknown[]): string {
+  const label = values.length === 1 ? values[0] : values;
+  return formatRawValue(label);
+}
+
+function normaliseFilenamePart(input: string): string {
+  return input
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function BrushDecoder({
+  plistA,
+  plistB,
+  activeView,
+  labelA,
+  labelB,
+  stickyOffset,
+  toolbarContainer,
+}: BrushDecoderProps) {
   const [showRaw, setShowRaw] = useState(true);
   const [panelFilter, setPanelFilter] = useState<string>(ALL_PANELS);
   const [searchTerm, setSearchTerm] = useState("");
@@ -217,6 +241,70 @@ export function BrushDecoder({ plistA, plistB, activeView, labelA, labelB }: Bru
 
   const activeLabel = getViewLabel(activeView, labelA, labelB);
 
+  const canExport =
+    activeView === "compare" ? filteredComparison.length > 0 : filteredSingle.length > 0;
+
+  const toolbarStickyTop = `${Math.max(0, stickyOffset ?? 12)}px`;
+
+  async function exportData(format: "csv" | "xlsx") {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const baseLabel =
+      activeView === "compare"
+        ? "comparison"
+        : normaliseFilenamePart(activeLabel || "") || (activeView === "A" ? "file-a" : "file-b");
+    const fileName = `procreate-brush-${baseLabel}-${timestamp}`;
+
+    const labelForA = getViewLabel("A", labelA, labelB);
+    const labelForB = getViewLabel("B", labelA, labelB);
+
+    const rows =
+      activeView === "compare"
+        ? filteredComparison.map(item => {
+            return {
+              Panel: item.entry.panel,
+              Setting: item.entry.setting,
+              [`Raw (${labelForA})`]: formatRawExport(item.rawValuesA),
+              [`Raw (${labelForB})`]: formatRawExport(item.rawValuesB),
+              [`Decoded (${labelForA})`]: formatDecodedValue(item.entry, item.decodedValueA),
+              [`Decoded (${labelForB})`]: formatDecodedValue(item.entry, item.decodedValueB),
+              Differs: item.differs ? "Yes" : "No",
+              Notes: item.entry.notes ?? "",
+            };
+          })
+        : filteredSingle.map(item => ({
+            Panel: item.entry.panel,
+            Setting: item.entry.setting,
+            Paths: item.entry.paths.join(" | "),
+            Raw: formatRawExport(item.rawValues),
+            Decoded: formatDecodedValue(item.entry, item.decodedValue),
+            Notes: item.entry.notes ?? "",
+          }));
+
+    if (!rows.length) return;
+
+    const columnOrder = Object.keys(rows[0]);
+    const xlsx = await import("xlsx");
+    const { utils, writeFile } = xlsx;
+    const worksheet = utils.json_to_sheet(rows, { header: columnOrder });
+    const workbook = utils.book_new();
+    utils.book_append_sheet(workbook, worksheet, "Settings");
+
+    if (format === "xlsx") {
+      const filenameWithExt = `${fileName}.xlsx`;
+      writeFile(workbook, filenameWithExt, { bookType: "xlsx" });
+      return;
+    }
+
+    const csv = utils.sheet_to_csv(worksheet);
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `${fileName}.csv`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  }
+
   const renderEmptyState = (message: string) => (
     <div className="rounded-lg border border-dashed border-slate-300 bg-slate-50 p-8 text-center text-slate-600 dark:border-slate-700 dark:bg-slate-900/50 dark:text-slate-300">
       {message}
@@ -265,22 +353,42 @@ export function BrushDecoder({ plistA, plistB, activeView, labelA, labelB }: Bru
     ));
   };
 
-  return (
-    <div className="space-y-6">
-      <Toolbar
-        panelOptions={panelOptions}
-        selectedPanel={panelFilter}
-        onPanelChange={setPanelFilter}
-        searchTerm={searchTerm}
-        onSearchChange={setSearchTerm}
-        showRaw={showRaw}
-        onToggleRaw={setShowRaw}
-        statusFilter={statusFilter}
-        onStatusFilterChange={setStatusFilter}
-        isComparisonView={activeView === "compare"}
-      />
+  const toolbarNode = (
+    <Toolbar
+      panelOptions={panelOptions}
+      selectedPanel={panelFilter}
+      onPanelChange={setPanelFilter}
+      searchTerm={searchTerm}
+      onSearchChange={setSearchTerm}
+      showRaw={showRaw}
+      onToggleRaw={setShowRaw}
+      statusFilter={statusFilter}
+      onStatusFilterChange={setStatusFilter}
+      isComparisonView={activeView === "compare"}
+      canExport={canExport}
+      onExportCsv={() => {
+        void exportData("csv");
+      }}
+      onExportXlsx={() => {
+        void exportData("xlsx");
+      }}
+    />
+  );
 
-      {activeView === "compare" ? renderComparisonView() : renderSingleView()}
-    </div>
+  const toolbarPortal = toolbarContainer ? createPortal(toolbarNode, toolbarContainer) : null;
+
+  return (
+    <>
+      {toolbarPortal}
+      <div className="space-y-6">
+        {!toolbarContainer ? (
+          <div className="sticky z-20" style={{ top: toolbarStickyTop }}>
+            {toolbarNode}
+          </div>
+        ) : null}
+
+        {activeView === "compare" ? renderComparisonView() : renderSingleView()}
+      </div>
+    </>
   );
 }

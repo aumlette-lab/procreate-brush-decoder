@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, DragEvent, useMemo, useState } from "react";
+import { ChangeEvent, DragEvent, useEffect, useMemo, useRef, useState } from "react";
 import { BrushDecoder, type ActiveView } from "@/components/BrushDecoder";
 
 type Slot = "A" | "B";
@@ -39,6 +39,51 @@ export default function Page() {
 
   const hasFileA = useMemo(() => plistA !== null, [plistA]);
   const hasFileB = useMemo(() => plistB !== null, [plistB]);
+  const stickyContainerRef = useRef<HTMLDivElement>(null);
+  const toolbarContainerRef = useRef<HTMLDivElement>(null);
+  const [stickyContainerHeight, setStickyContainerHeight] = useState(0);
+  const [isScrolledPastHeader, setIsScrolledPastHeader] = useState(false);
+
+  useEffect(() => {
+    const node = stickyContainerRef.current;
+    if (!node) return;
+
+    const updateHeight = () => {
+      setStickyContainerHeight(node.offsetHeight);
+    };
+
+    updateHeight();
+
+    let observer: ResizeObserver | null = null;
+
+    if (typeof ResizeObserver !== "undefined") {
+      observer = new ResizeObserver(() => updateHeight());
+      observer.observe(node);
+    } else {
+      window.addEventListener("resize", updateHeight);
+    }
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      } else {
+        window.removeEventListener("resize", updateHeight);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 12;
+      setIsScrolledPastHeader(prev => (prev === scrolled ? prev : scrolled));
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   async function parseFile(file: File, slot: Slot) {
     setLoadingSlot(slot);
@@ -193,16 +238,24 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-slate-100 py-10 dark:bg-slate-950">
       <div className="mx-auto flex w-full max-w-[110rem] flex-col gap-8 px-6 md:px-10 lg:px-16">
-        <header className="space-y-2">
-          <h1 className="text-3xl font-medium text-slate-900 dark:text-slate-100">Procreate Brush Decoder</h1>
-          <p className="max-w-3xl text-sm text-slate-600 dark:text-slate-300">
-            Upload one or two Procreate brush files (<code>.archive</code> or <code>.plist</code>) to decode their settings. Switch
-            between individual views or compare the brushes side by side to see what changed.
-          </p>
-        </header>
+        <div
+          ref={stickyContainerRef}
+          className={`sticky top-0 z-30 border-b border-transparent bg-slate-100 transition-all duration-200 dark:border-transparent dark:bg-slate-950 ${
+            isScrolledPastHeader
+              ? "space-y-4 py-3"
+              : "space-y-6 py-5"
+          }`}
+        >
+          <header className="space-y-2">
+            <h1 className="text-3xl font-medium text-slate-900 dark:text-slate-100">Procreate Brush Decoder</h1>
+            <p className="max-w-3xl text-sm text-slate-600 dark:text-slate-300">
+              Upload one or two Procreate brush files (<code>.archive</code> or <code>.plist</code>) to decode their settings.
+              Switch between individual views or compare the brushes side by side to see what changed.
+            </p>
+          </header>
 
-        <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-          <div className="grid gap-4 md:grid-cols-2">
+          <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:shadow-slate-950/40">
+            <div className="grid gap-4 md:grid-cols-2">
             {(["A", "B"] as const).map(slot => {
               const hasFile = slot === "A" ? hasFileA : hasFileB;
               const name = slot === "A" ? nameA : nameB;
@@ -311,9 +364,22 @@ export default function Page() {
               Compare A &amp; B
             </button>
           </div>
-        </section>
 
-        <BrushDecoder plistA={plistA} plistB={plistB} activeView={activeView} labelA={nameA} labelB={nameB} />
+          <div ref={toolbarContainerRef} className="mt-6" />
+          </section>
+        </div>
+
+        <div className="mt-4">
+          <BrushDecoder
+            plistA={plistA}
+            plistB={plistB}
+            activeView={activeView}
+            labelA={nameA}
+            labelB={nameB}
+            stickyOffset={stickyContainerHeight + 12}
+            toolbarContainer={toolbarContainerRef.current}
+          />
+        </div>
       </div>
     </main>
   );

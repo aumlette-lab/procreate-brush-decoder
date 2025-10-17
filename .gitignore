@@ -9,6 +9,7 @@ out/
 # build tools
 dist/
 build/
+tsconfig.tsbuildinfo
 
 # debug logs
 npm-debug.log*

@@ -11,6 +11,9 @@ type ToolbarProps = {
   statusFilter: "all" | "same" | "different";
   onStatusFilterChange: (value: "all" | "same" | "different") => void;
   isComparisonView: boolean;
+  canExport: boolean;
+  onExportCsv: () => void;
+  onExportXlsx: () => void;
 };
 
 export function Toolbar({
@@ -24,6 +27,9 @@ export function Toolbar({
   statusFilter,
   onStatusFilterChange,
   isComparisonView,
+  canExport,
+  onExportCsv,
+  onExportXlsx,
 }: ToolbarProps) {
   function handlePanelChange(event: ChangeEvent<HTMLSelectElement>) {
     onPanelChange(event.target.value);
@@ -92,6 +98,24 @@ export function Toolbar({
           placeholder="Search settings"
           className="w-full rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
         />
+      </div>
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          onClick={onExportCsv}
+          disabled={!canExport}
+          className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-500 disabled:cursor-not-allowed disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700 dark:disabled:border-slate-700 dark:disabled:bg-slate-800/60 dark:disabled:text-slate-500"
+        >
+          Export CSV
+        </button>
+        <button
+          type="button"
+          onClick={onExportXlsx}
+          disabled={!canExport}
+          className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-500 disabled:cursor-not-allowed disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700 dark:disabled:border-slate-700 dark:disabled:bg-slate-800/60 dark:disabled:text-slate-500"
+        >
+          Export XLSX
+        </button>
       </div>
     </div>
   );
