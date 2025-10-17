@@ -8,6 +8,19 @@ export type DecodedSetting = {
   decodedValue: unknown;
 };
 
+const EXTENDED_BLEND_KEY_PAIRS = new Set([
+  "$top.root.grainBlendMode::$top.root.grainBlendModeExtended",
+  "$top.root.blendMode::$top.root.extendedBlend2",
+  "$top.root.burntEdgesBlendMode::$top.root.burntEdgesBlendModeExtended",
+  "$top.root.dualBlendMode::$top.root.dualBlendModeExtended",
+]);
+
+function deriveExtendedBlendValue(base: number): number {
+  if (base === 19) return 34;
+  if (base === 25) return 0;
+  return base;
+}
+
 function normalizeDefaultValue(input: unknown): unknown {
   if (Array.isArray(input)) {
     return input.map(item => normalizeDefaultValue(item));
@@ -88,6 +101,16 @@ function decodeWithFormula(formula: string, rawValues: unknown[]): unknown {
 
 export function decodeSetting(entry: MappingEntry, plist: unknown): DecodedSetting {
   const rawValues = entry.paths.map(path => getValueFromPlist(plist, path));
+
+  if (entry.paths.length >= 2) {
+    const pairKey = `${entry.paths[0]}::${entry.paths[1]}`;
+    if (EXTENDED_BLEND_KEY_PAIRS.has(pairKey)) {
+      const baseValue = rawValues[0];
+      if (typeof baseValue === "number" && rawValues[1] === undefined) {
+        rawValues[1] = deriveExtendedBlendValue(baseValue);
+      }
+    }
+  }
   const defaultValue = parseDefaultValue(entry.default);
   const effectiveRawValues = rawValues.map((value, index) => {
     if (value !== undefined) return value;
